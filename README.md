@@ -12,10 +12,4 @@
 git clone https://github.com/usfese/IzakayaCheater.git
 ```
 ### 3.编译
-```
-cd IzakayaCheater
-mkdir build
-cd build
-cmake ..
-mingw32-make .
-```
+用CMake GUI或CMake CLI打开CMakeLists.txt并用偏好的编译器编译即可。
