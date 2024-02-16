@@ -35,7 +35,7 @@ install(FILES
         DESTINATION ".")
 
 install(DIRECTORY
-        "${PROJECT_SOURCE_DIR}/DLLs/"
+        "${PROJECT_SOURCE_DIR}/DLLS/"
         DESTINATION ".")
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
 include(CPack)
