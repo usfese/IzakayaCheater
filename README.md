@@ -13,3 +13,4 @@ git clone https://github.com/usfese/IzakayaCheater.git
 ```
 ### 3.编译
 用CMake GUI或CMake CLI打开CMakeLists.txt并用偏好的编译器编译即可。
+最后记得把项目下DLLs目录下的所有.dll文件复制在可执行文件同一目录下。（或者你可以用自己的wxWidgets安装中的dll）
