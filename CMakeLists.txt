@@ -25,13 +25,17 @@ set(CPACK_NSIS_EXECUTABLES_DIRECTORY ".")
 
 #安装编译的文件
 install(TARGETS ${PROJECT_NAME}
-        RUNTIME DESTINATION "bin" )
+        RUNTIME DESTINATION "." )
 
 
 #拷贝单个文件至安装目录
 install(FILES
         "${PROJECT_SOURCE_DIR}/README.md"
         "${PROJECT_SOURCE_DIR}/LICENSE"
-        DESTINATION "bin")
+        DESTINATION ".")
+
+install(DIRECTORY
+        "${PROJECT_SOURCE_DIR}/DLLs/"
+        DESTINATION ".")
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
 include(CPack)
