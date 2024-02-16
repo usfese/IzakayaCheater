@@ -77,14 +77,15 @@ IzakayaResult GetIzakayaProcess()
     result.hProc = hProc;
     return result;
 }
-INT32 ReadMoney(uintptr_t modBase, HANDLE hProc)
+DWORD ReadMoney(uintptr_t modBase, HANDLE hProc)
 {
-    INT32 money = 0;
-    uintptr_t moneyPtr = GetDMAAddress(hProc, modBase + 0x3F2FAB0, moneyOffsets);
-    return ReadProcessMemory(hProc, (BYTE*)moneyPtr,  &money, sizeof(money), nullptr);
+    DWORD money = 0;
+    uintptr_t moneyPtr = GetDMAAddress(hProc, modBase + 0x3F2B850, moneyOffsets);
+    ReadProcessMemory(hProc, (BYTE*)moneyPtr,  &money, sizeof(money), nullptr);
+	return money;
 }
-void ChangeMoney(uintptr_t modBase, HANDLE hProc, INT32 value)
+void ChangeMoney(uintptr_t modBase, HANDLE hProc, DWORD value)
 {
-    uintptr_t moneyPtr = GetDMAAddress(hProc, modBase + 0x3F2FAB0, moneyOffsets);
+    uintptr_t moneyPtr = GetDMAAddress(hProc, modBase + 0x3F2B850, moneyOffsets);
     WriteProcessMemory(hProc, (BYTE*)moneyPtr, &value, sizeof(value), nullptr);
 }

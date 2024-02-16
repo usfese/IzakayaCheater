@@ -1,10 +1,11 @@
 cmake_minimum_required(VERSION 3.5.0)
 project(IzakayaCheater VERSION 0.1.0 LANGUAGES C CXX)
+configure_file("${PROJECT_SOURCE_DIR}/config.h.in" "${PROJECT_SOURCE_DIR}/config.h")
 
 include(CTest)
 enable_testing()
 
-set(SRCS main.cpp ui/ui.cpp MyMainFrame.cpp utils.cpp)
+set(SRCS main.cpp ui/ui.cpp MyMainFrame.cpp utils.cpp MyAboutFrame.cpp)
 
 add_executable(IzakayaCheater ${SRCS})
 

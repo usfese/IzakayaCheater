@@ -1,4 +1,5 @@
 #pragma once
+#include <winsock2.h>
 #include <windows.h>
 #include <vector>
 
@@ -24,5 +25,5 @@ struct IzakayaResult
 };
 IzakayaResult GetIzakayaProcess();
 
-INT32 ReadMoney(uintptr_t modBase, HANDLE hProc);
-void ChangeMoney(uintptr_t modBase, HANDLE hProc, INT32 value);
+DWORD ReadMoney(uintptr_t modBase, HANDLE hProc);
+void ChangeMoney(uintptr_t modBase, HANDLE hProc, DWORD value);
