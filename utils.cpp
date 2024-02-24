@@ -80,12 +80,12 @@ IzakayaResult GetIzakayaProcess()
 DWORD ReadMoney(uintptr_t modBase, HANDLE hProc)
 {
     DWORD money = 0;
-    uintptr_t moneyPtr = GetDMAAddress(hProc, modBase + 0x3F2B850, moneyOffsets);
+    uintptr_t moneyPtr = GetDMAAddress(hProc, modBase + modBaseOffset, moneyOffsets);
     ReadProcessMemory(hProc, (BYTE*)moneyPtr,  &money, sizeof(money), nullptr);
 	return money;
 }
 void ChangeMoney(uintptr_t modBase, HANDLE hProc, DWORD value)
 {
-    uintptr_t moneyPtr = GetDMAAddress(hProc, modBase + 0x3F2B850, moneyOffsets);
+    uintptr_t moneyPtr = GetDMAAddress(hProc, modBase + modBaseOffset, moneyOffsets);
     WriteProcessMemory(hProc, (BYTE*)moneyPtr, &value, sizeof(value), nullptr);
 }

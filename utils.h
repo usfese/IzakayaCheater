@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <vector>
 
+static const uintptr_t modBaseOffset = 0x3F527A0;
 static const std::vector <unsigned int> moneyOffsets = { 0xB8, 0x38 };
 
 DWORD GetProcessID(const wchar_t* procName);  // 获取 process ID
