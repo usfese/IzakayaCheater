@@ -87,10 +87,9 @@ MainFrame::~MainFrame()
 
 }
 
-AboutFrame::AboutFrame( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxFrame( parent, id, title, pos, size, style )
+AboutDialog::AboutDialog( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
-	this->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_HIGHLIGHTTEXT ) );
 
 	wxBoxSizer* bSizer2;
 	bSizer2 = new wxBoxSizer( wxVERTICAL );
@@ -143,10 +142,11 @@ AboutFrame::AboutFrame( wxWindow* parent, wxWindowID id, const wxString& title, 
 
 	this->SetSizer( bSizer2 );
 	this->Layout();
+	bSizer2->Fit( this );
 
 	this->Centre( wxBOTH );
 }
 
-AboutFrame::~AboutFrame()
+AboutDialog::~AboutDialog()
 {
 }

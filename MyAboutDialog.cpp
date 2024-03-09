@@ -1,11 +1,11 @@
-#include "MyAboutFrame.h"
+#include "MyAboutDialog.h"
 #include "config.h"
 
-MyAboutFrame::MyAboutFrame(wxWindow* parent) : AboutFrame(parent, -1)
+MyAboutDialog::MyAboutDialog(wxWindow* parent) : AboutDialog(parent, -1)
 {
     this->versionText->SetLabel(VERSION);
     this->supportedGameVersionText->SetLabel(SUPPORTED_VERSION);
     this->parent = parent;
 }
 
-MyAboutFrame::~MyAboutFrame() = default;
+MyAboutDialog::~MyAboutDialog() = default;

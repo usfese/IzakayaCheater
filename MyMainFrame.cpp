@@ -17,8 +17,8 @@ void MyMainFrame::OnChange( wxCommandEvent& event )
 
 void MyMainFrame::OnAbout( wxCommandEvent& event )
 {
-    this->myAboutFrame = new MyAboutFrame(this);
-    this->myAboutFrame->Show();
+    this->myAboutDialog = new MyAboutDialog(this);
+    this->myAboutDialog->ShowModal();
 }
 
 void MyMainFrame::Detect()
@@ -63,4 +63,5 @@ void MyMainFrame::Change(){
         return;
     }
     ChangeMoney(GetModBase(), GetHProc(), moneyCtrl->GetValue());
+    wxMessageBox(_T("已写入！"));
 }

@@ -24,6 +24,7 @@
 #include <wx/textctrl.h>
 #include <wx/frame.h>
 #include <wx/hyperlink.h>
+#include <wx/dialog.h>
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -61,9 +62,9 @@ class MainFrame : public wxFrame
 };
 
 ///////////////////////////////////////////////////////////////////////////////
-/// Class AboutFrame
+/// Class AboutDialog
 ///////////////////////////////////////////////////////////////////////////////
-class AboutFrame : public wxFrame
+class AboutDialog : public wxDialog
 {
 	private:
 
@@ -80,9 +81,9 @@ class AboutFrame : public wxFrame
 
 	public:
 
-		AboutFrame( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("关于"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 504,229 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
+		AboutDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_DIALOG_STYLE|wxSTAY_ON_TOP );
 
-		~AboutFrame();
+		~AboutDialog();
 
 };
 

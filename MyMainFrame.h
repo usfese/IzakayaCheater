@@ -1,7 +1,7 @@
 #pragma once
 #include "ui/ui.h"
 #include "utils.h"
-#include "MyAboutFrame.h"
+#include "MyAboutDialog.h"
 #include <memory>
 
 class MyMainFrame : public MainFrame
@@ -9,7 +9,9 @@ class MyMainFrame : public MainFrame
     private:
     uintptr_t modBase;
     HANDLE hProc;
-    MyAboutFrame* myAboutFrame;
+    MyAboutDialog* myAboutDialog;
+
+    
     public:
     void SetModBase(uintptr_t modBase){this->modBase = modBase;}
     uintptr_t GetModBase(){return this->modBase;}
@@ -20,6 +22,10 @@ class MyMainFrame : public MainFrame
 	virtual void OnAbout( wxCommandEvent& event );
     virtual void OnTextEnter( wxCommandEvent& event );
     MyMainFrame();
+
+    // 检测游戏进程
     void Detect();
+
+    // 改变金钱值
     void Change();
 };
