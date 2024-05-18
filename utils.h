@@ -4,7 +4,7 @@
 #include <vector>
 
 // 模块基址
-static const uintptr_t modBaseOffset = 0x3F9FD30;
+static const uintptr_t modBaseOffset = 0x3F81830;
 
 // 金钱偏移
 static const std::vector <unsigned int> moneyOffsets = { 0xB8, 0x38 };
